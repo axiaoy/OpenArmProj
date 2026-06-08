@@ -37,7 +37,7 @@ Tests:
 pytest
 ```
 
-## Task 1: CAN Interface Setup
+## CAN Interface Setup
 
 Task 1 is simulated in this submission because no OpenArm hardware is attached. The setup command still mirrors the OpenArm 2.0 flow so the same wrapper can be used on the robot.
 
@@ -56,6 +56,7 @@ Expected output:
 + openarm-can-cli -i can0 set_zero --arm
 + openarm-can-cli -i can1 set_zero --arm
 ```
+<img width="689" height="84" alt="Screenshot 2026-06-08 at 3 59 03 PM" src="https://github.com/user-attachments/assets/9b426693-4e62-4d91-9696-032f7c1faa4c" />
 
 Hardware command sequence:
 
@@ -216,6 +217,9 @@ Rolling plots show position, velocity, torque, and camera timestamp offsets rath
 
 Camera DOM nodes are created once and updated in place, and plots are drawn with browser-native canvas. This avoids pulling in a charting library, which matters because the dashboard runs on the robot's onboard computer alongside the CAN reader, camera capture, and the API server. A heavy frontend dependency would compete for CPU and memory on a machine that already has a demanding real-time workload.
 
+<img width="639" height="426" alt="Screenshot 2026-06-08 at 3 59 48 PM" src="https://github.com/user-attachments/assets/4266c61f-2caa-43c7-881e-b853eff09771" />
+<img width="634" height="515" alt="Screenshot 2026-06-08 at 3 59 40 PM" src="https://github.com/user-attachments/assets/6e65c9e5-104e-4504-90d0-7be48fa91cd8" />
+
 ## Unit Test Coverage
 
 Unit tests are included under `tests/`:
@@ -249,7 +253,4 @@ Given hardware access, the next engineering steps in priority order would be:
 4. **Store calibration metadata per episode**: extrinsic camera calibration, URDF hash, and operator/session ID.
 5. **Add operational telemetry**: dropped-frame counters, CAN receive latency histograms, and disk-space alerts surfaced on the dashboard.
 6. **Add a replay and inspection tool** for recorded HDF5 episodes so operators can review demonstrations before committing them to a training dataset.
-7. **Evaluate MCAP or zarr** if the collection workflow scales to multiple simultaneous stations or cloud-based dataset storage.# OpenArmProj
-# OpenArmProj
-# OpenArmProj
-# OpenArmProj
+7. **Evaluate MCAP or zarr** if the collection workflow scales to multiple simultaneous stations or cloud-based dataset storage.
