@@ -1,0 +1,2 @@
+[console_scripts]
+openarm-collector = openarm_data_collection.cli:main

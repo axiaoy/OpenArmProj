@@ -1,0 +1,267 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f6f7f4;
+  color: #17201b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.shell {
+  width: min(1240px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0 22px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 750;
+}
+
+h2 {
+  font-size: 15px;
+  font-weight: 720;
+}
+
+p,
+.panel-head span,
+.label,
+#recordingState,
+.episode-row span,
+.camera-tile span,
+.chart-tile span {
+  color: #647067;
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button,
+.button-link {
+  min-width: 86px;
+  height: 38px;
+  border: 0;
+  border-radius: 6px;
+  background: #126b53;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.recording {
+  background: #b23434;
+}
+
+button.paused {
+  background: #8a641f;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.panel {
+  background: white;
+  border: 1px solid #dfe5dd;
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 1px 2px rgba(20, 32, 26, 0.04);
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.camera-panel {
+  min-height: 430px;
+}
+
+.camera-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.camera-tile {
+  border: 1px solid #e4e9e2;
+  border-radius: 6px;
+  padding: 8px;
+  background: #fbfcfa;
+}
+
+.camera-tile img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  image-rendering: pixelated;
+  border-radius: 4px;
+  background: #101614;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.camera-tile strong,
+.chart-tile strong {
+  display: block;
+  font-size: 13px;
+}
+
+.joints {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.joint {
+  border: 1px solid #e4e9e2;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.joint-name {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 700;
+  gap: 8px;
+}
+
+.bar {
+  height: 8px;
+  margin-top: 7px;
+  background: #edf1eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  width: 50%;
+  background: #327c92;
+}
+
+.stats {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.stats div,
+.chart-tile,
+.episode-row {
+  border: 1px solid #e4e9e2;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.stats strong {
+  display: block;
+  font-size: 26px;
+  margin-top: 4px;
+}
+
+.telemetry-panel,
+.episodes-panel {
+  grid-column: 1 / -1;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.chart-tile {
+  background: #fbfcfa;
+}
+
+.chart-tile > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+canvas {
+  width: 100%;
+  height: 150px;
+  display: block;
+}
+
+.episodes {
+  display: grid;
+  gap: 8px;
+}
+
+.episode-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.episode-row strong {
+  display: block;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .topbar,
+  .grid,
+  .camera-grid,
+  .joints,
+  .stats,
+  .chart-grid,
+  .episode-row {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

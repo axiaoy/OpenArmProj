@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OpenArm Collector</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar">
+        <div>
+          <h1>OpenArm Collector</h1>
+          <p id="mode">Simulated collection console</p>
+        </div>
+        <div class="actions">
+          <button id="recordButton" type="button">Start</button>
+          <button id="pauseButton" type="button" disabled>Pause</button>
+          <span id="recordingState">Idle</span>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="panel camera-panel">
+          <div class="panel-head">
+            <h2>Camera Previews</h2>
+            <span id="cameraMeta">0 / 4 active</span>
+          </div>
+          <div id="cameraGrid" class="camera-grid"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h2>Joint State</h2>
+            <span id="sampleMeta">Waiting</span>
+          </div>
+          <div id="joints" class="joints"></div>
+        </article>
+
+        <article class="panel stats">
+          <div>
+            <span class="label">Episodes</span>
+            <strong id="episodeCount">0</strong>
+          </div>
+          <div>
+            <span class="label">Buffered</span>
+            <strong id="bufferedCount">0</strong>
+          </div>
+          <div>
+            <span class="label">Cameras</span>
+            <strong id="cameraCount">0</strong>
+          </div>
+          <div>
+            <span class="label">Joint Rate</span>
+            <strong id="sampleAge">--</strong>
+          </div>
+        </article>
+
+        <article class="panel telemetry-panel">
+          <div class="panel-head">
+            <h2>Real-Time Telemetry</h2>
+            <span id="telemetryMeta">Rolling window</span>
+          </div>
+          <div class="chart-grid">
+            <div class="chart-tile">
+              <div><strong>Position</strong><span>first 4 joints</span></div>
+              <canvas id="positionChart" width="520" height="150"></canvas>
+            </div>
+            <div class="chart-tile">
+              <div><strong>Velocity</strong><span>first 4 joints</span></div>
+              <canvas id="velocityChart" width="520" height="150"></canvas>
+            </div>
+            <div class="chart-tile">
+              <div><strong>Torque</strong><span>first 4 joints</span></div>
+              <canvas id="torqueChart" width="520" height="150"></canvas>
+            </div>
+            <div class="chart-tile">
+              <div><strong>Frame Offsets</strong><span>camera sync skew</span></div>
+              <canvas id="offsetChart" width="520" height="150"></canvas>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel episodes-panel">
+          <div class="panel-head">
+            <h2>Collected Data</h2>
+            <span id="episodeMeta">No episodes</span>
+          </div>
+          <div id="episodes" class="episodes"></div>
+        </article>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+data/episodes/*.h5
+data/episodes/index.json
+
+
+# logs
+.cursor/
+.cursorrules
+.copilot/
+*.log
+
+.env
