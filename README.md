@@ -12,7 +12,7 @@ The implementation is runnable without robot hardware. Hardware-specific behavio
 | CAN data reading | Simulated | Generates 16 OpenArm-like joints with position, velocity, and torque at a nominal 100 Hz. |
 | Multi-camera sync | Simulated | Four independent camera streams: wrist left, wrist right, ceiling, and ZED stereo. |
 | Storage backend | Implemented | HDF5 episodes with joint arrays, camera tensors, timestamps, presence masks, and metadata. |
-| REST API | Implemented | Live state, recording controls, pause/resume, episode listing, metadata, and HDF5 downloads. |
+| REST API | Implemented | Live state, recording controls: start/stop and pause/resume, episode listing, metadata, and HDF5 downloads. |
 | Monitoring dashboard | Implemented | Four camera previews, live joint state, rolling telemetry plots, recording controls, and download links. |
 | Unit tests | Implemented | CLI, synchronization, recorder behavior, API/storage, downloads, pause/resume, and camera previews. |
 
